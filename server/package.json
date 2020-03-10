@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "COOKIE_SECRET=bad_secret PGUSER=postgres PGDATABASE=adp-2020-assignment-3 npx nodemon ./src/index.js",
+    "db:migrate": "DATABASE_URL=postgres://postgres@localhost:5432/adp-2020-assignment-3 node-pg-migrate",
+    "db:create": "npx createdbjs adp-2020-assignment-3",
+    "db:drop": "npx dropdbjs adp-2020-assignment-3 || true",
+    "db:reset": "yarn db:drop && yarn db:create && yarn db:migrate up"
+  },
+  "dependencies": {
+    "apollo-server": "^2.11.0",
+    "bcrypt": "^4.0.0",
+    "connect-pg-simple": "^6.1.0",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "graphql": "^14.6.0",
+    "node-pg-migrate": "^4.2.2",
+    "nodemon": "^2.0.2",
+    "pg": "^7.18.2",
+    "pgtools": "^0.3.0"
+  }
+}
