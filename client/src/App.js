@@ -13,6 +13,7 @@ import {
     Button,
     Typography
 } from '@material-ui/core';
+import Signup from './Signup.js'
 import './App.css';
 
 const graphql = new GraphQL();
@@ -27,52 +28,9 @@ const App = () => {
        
        <GraphQLProvider graphql={graphql}>
 
-           
-           <div className="Container">
+           <Signup />
 
-               <h1>Sign-Up Form</h1> 
-                <form>
-
-                <TextField
-                    name="Create Username"
-                    label="Username"
-                    fullWidth
-                    inputRef={register({
-                        required: 'Required'})}
-                    error={errors.username != null}
-                >
-                </TextField>
-                    <Typography color="error">
-                        {errors.username && errors.username.message}
-                    </Typography>
-
-                <TextField
-                    name="password"
-                    label="Password"
-                    type="password"
-                    fullWidth
-                    inputRef={register({
-                        required: 'Required',
-                    })}
-                    error={errors.pasword != null}
-                >
-                </TextField>
-                <Typography color="error">
-                    {errors.password && errors.password.message}
-                </Typography>
-
-                <Button 
-                  variant="contained"
-                  color="primary"
-                  type="submit"
-                  fullWidth
-                >
-                    Log In
-                </Button>
-
-                </form>
-
-           </div>
+    
 
 
 
