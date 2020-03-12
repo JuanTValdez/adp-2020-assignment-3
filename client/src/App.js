@@ -14,6 +14,7 @@ import {
     Typography
 } from '@material-ui/core';
 import Signup from './Signup.js'
+import Login from './Login.js'
 import './App.css';
 
 const graphql = new GraphQL();
@@ -28,8 +29,8 @@ const App = () => {
        
        <GraphQLProvider graphql={graphql}>
 
-           <Signup />
-
+        {/* <Signup /> */}
+        <Login /> 
     
 
 

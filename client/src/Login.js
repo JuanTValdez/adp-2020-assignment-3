@@ -3,7 +3,7 @@ import { useForm, ErrorMessage } from "react-hook-form";
 import { TextField, Button, Typography } from "@material-ui/core";
 import "./App.css";
 
-const Signup = () => {
+const Login = () => {
   const { handleSubmit, register, errors } = useForm();
   const [serverError, setServerError] = useState();
   const onSubmit = async values => {
@@ -12,11 +12,11 @@ const Signup = () => {
 
   return (
     <div className="Container">
-      <h1> Sign-Up Form</h1>
+      <h1> Log-In Form</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <TextField
           name="username"
-          label="Username"
+          label="Enter Username"
           fullWidth
           inputRef={register({
             required: "Required"
@@ -28,7 +28,7 @@ const Signup = () => {
         </Typography>
         <TextField
           name="password"
-          label="Password"
+          label="Enter Password"
           type="password"
           fullWidth
           inputRef={register({
@@ -41,11 +41,11 @@ const Signup = () => {
         </Typography>
         <Typography color="error">{serverError}</Typography>
         <Button variant="contained" color="primary" type="submit" fullWidth>
-          Sign Up
+          Log In
         </Button>
       </form>
     </div>
   );
 };
 
-export default Signup;
+export default Login;
