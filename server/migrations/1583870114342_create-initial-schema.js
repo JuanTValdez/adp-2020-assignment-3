@@ -3,6 +3,21 @@
 exports.shorthands = undefined;
 
 exports.up = pgm => {
+
+  pgm.createTable("users_list",{
+
+    id: 'id',
+    username: { type: 'text', notNull: true},
+    email: {  type: 'text', notNull: true},
+    hashed_password:{ type: 'text', notNull: true},
+
+    createdAt: {
+      type: 'timestamp',
+      notNull: true,
+      default: pgm.func('current_timestamp'),
+    },
+
+  })
   pgm.createTable("country_of_origin",{
     id: 'id',
     country_name: { type: 'text', notNull: true },
