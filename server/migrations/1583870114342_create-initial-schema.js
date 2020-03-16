@@ -43,7 +43,8 @@ exports.up = pgm => {
 
   INSERT INTO food_list ( food_name, price, vegetarian_vegan, spice_level, gluten_free, soy_free, country_origin_id)
   VALUES
-  ('Pad Thai', 19.99, 'vegetarian', 2, 'no', 'no', 1)
+  ('Pad Thai', 19.99, 'vegetarian', 2, 'no', 'no', 1),
+  ('Buffalo Chicken Wings', 14.99, 'no', 1, 'yes', 'no', 1);
   `)
 
 };
